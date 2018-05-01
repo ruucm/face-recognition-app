@@ -1,36 +1,29 @@
-import { createStore, applyMiddleware, compose } from 'redux';
+import { compose, createStore, applyMiddleware } from 'redux';
+// Redux DevTools store enhancers
+// import { devTools, persistState } from 'redux-devtools';
 import thunk from 'redux-thunk';
-import logger from './logger';
-import rootReducer from '../reducers';
+import reducer from '../reducers';
 
-function configureStore(initialState) {
-  const store = compose(
-    _getMiddleware(),
-  )(createStore)(rootReducer, initialState);
+const finalCreateStore = compose(
+  // Enables your middleware:
+  applyMiddleware(thunk),
+  // Provides support for DevTools:
+  // devTools(),
+  // Lets you write ?debug_session=<name> in address bar to persist debug sessions
+  // persistState(window.location.href.match(/[?&]debug_session=([^&]+)\b/)),
+  window.devToolsExtension ? window.devToolsExtension() : f => f
+)(createStore);
 
-  _enableHotLoader(store);
-  return store;
-}
+export default function configureStore(initialState) {
+  const store = finalCreateStore(reducer, initialState);
 
-function _getMiddleware() {
-  let middleware = [
-    thunk,
-  ];
-
-  if (__DEV__) {
-    middleware = [...middleware, logger];
-  }
-
-  return applyMiddleware(...middleware);
-}
-
-function _enableHotLoader(store) {
-  if (__DEV__ && module.hot) {
+  if (module.hot) {
+    // Enable Webpack hot module replacement for reducers
     module.hot.accept('../reducers', () => {
-      const nextRootReducer = require('../reducers');
-      store.replaceReducer(nextRootReducer);
+      const nextReducer = require('../reducers');
+      store.replaceReducer(nextReducer);
     });
   }
-}
 
-export default configureStore;
+  return store;
+}
