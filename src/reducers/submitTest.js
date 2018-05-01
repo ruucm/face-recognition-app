@@ -13,17 +13,16 @@ const INITIAL_STATE = fromJS({
 });
 
 function submitTestReducer(state = INITIAL_STATE, action = {}) {
-  log('action.payload', action.payload)
   switch (action.type) {
 
-  case WINDOW_RESIZE:
-    return state.merge(action.payload);
-  
-  case SUBMIT_TEST:
-    return state.merge(action.payload);
+    case WINDOW_RESIZE:
+      return state.merge(action.payload);
+    
+    case SUBMIT_TEST:
+      return state.merge(action.payload);
 
-  default:
-    return state;
+    default:
+      return state;
   }
 }
 

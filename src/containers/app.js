@@ -30,7 +30,7 @@ class App extends Component {
   }
 
   render() {
-    log('redner!')
+    log('render!')
     log('this.state', this.state)
     log('this.props', this.props)
     const { w, h, yellowSize } = this.props;
@@ -47,7 +47,7 @@ class App extends Component {
                   x={ 0.1625 * w + (0.15 * w * idx) } y={ 0.25 * h }
                   width={ 0.075 * w }
                   height={ yellowSize }
-                  fill={ clr } />
+                  fill='#F0625C' />
                 )
               else
                 return (
@@ -83,9 +83,9 @@ class App extends Component {
 
 function mapStateToProps(state) {
   return {
-    w: state.canvas.w,
-    h: state.canvas.h,
-    yellowSize: state.canvas.yellowSize,
+    w: state.canvas.get('w'),
+    h: state.canvas.get('h'),
+    yellowSize: state.canvas.get('yellowSize'),
   };
 }
 
