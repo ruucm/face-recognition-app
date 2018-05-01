@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import styled from 'styled-components';
 
-class urlForm extends Component {
+class UrlForm extends Component {
   render() {
     return (
       <div>url Form</div>
@@ -9,4 +9,4 @@ class urlForm extends Component {
   }
 }
 
-export default urlForm;
+export default UrlForm;

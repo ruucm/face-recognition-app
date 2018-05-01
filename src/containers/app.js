@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Canvas from '../components/canvas';
 import { windowResize } from '../actions/canvas';
 import Header from '../components/Header';
-import urlForm from '../components/urlForm';
+import UrlForm from '../components/UrlForm';
 
 import styled from 'styled-components';
 
@@ -56,7 +56,7 @@ class App extends Component {
             })
           }
         </Canvas>
-        <urlForm />
+        <UrlForm />
       </IPhone8Wrapper>
     );
   }

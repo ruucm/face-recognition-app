@@ -1,3 +1,3 @@
-import urlForm from './urlForm';
+import UrlForm from './UrlForm';
 
-export default urlForm;
+export default UrlForm;
