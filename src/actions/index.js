@@ -1,4 +1,4 @@
-import { WINDOW_RESIZE, TOGGLE_TRIANGLE, TOGGLE_SQUARE, TOGGLE_CIRCLE, TOGGLE_PAGE01, TOGGLE_PAGE02, TOGGLE_PAGE03, TOGGLE_LOADER, TOGGLE_ABOUT, SET_PALETTE } from '../constants';
+import { WINDOW_RESIZE, SUBMIT_TEST, TOGGLE_TRIANGLE, TOGGLE_SQUARE, TOGGLE_CIRCLE, TOGGLE_PAGE01, TOGGLE_PAGE02, TOGGLE_PAGE03, TOGGLE_LOADER, TOGGLE_ABOUT, SET_PALETTE } from '../constants';
 import { log } from 'ruucm-util';
 
 export function windowResize({ width, height }) {
@@ -15,6 +15,15 @@ export function windowResize({ width, height }) {
     payload: { width, height, w, h },
   };
 
+}
+
+
+
+export function submitTest(yellowSize) {
+  return {
+    type: SUBMIT_TEST,
+    payload: { yellowSize },
+  };
 }
 
 function toggleShape(type) {

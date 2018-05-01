@@ -3,6 +3,7 @@ import {
   SUBMIT_TEST,
 } from '../constants';
 import { fromJS } from 'immutable';
+import { log } from 'ruucm-util';
 
 const INITIAL_STATE = fromJS({
   width: 100,
@@ -12,6 +13,7 @@ const INITIAL_STATE = fromJS({
 });
 
 function submitTestReducer(state = INITIAL_STATE, action = {}) {
+  log('action.payload', action.payload)
   switch (action.type) {
 
   case WINDOW_RESIZE:

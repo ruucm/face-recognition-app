@@ -1,10 +1,16 @@
-export const WINDOW_RESIZE = '@@app/WINDOW_RESIZE';
-export const SUBMIT_TEST = 'SUBMIT_TEST';
+
 
 
 /**
  *  Actions
  */
+export const WINDOW_RESIZE = '@@app/WINDOW_RESIZE';
+export const SUBMIT_TEST = 'SUBMIT_TEST';
+
+
+
+
+
 export const TOGGLE_TRIANGLE = 'TOGGLE_TRIANGLE';
 export const TOGGLE_SQUARE = 'TOGGLE_SQUARE';
 export const TOGGLE_CIRCLE = 'TOGGLE_CIRCLE';

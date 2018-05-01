@@ -1,5 +1,6 @@
 import {
   WINDOW_RESIZE,
+  SUBMIT_TEST,
 } from '../constants';
 import { fromJS } from 'immutable';
 import { log } from 'ruucm-util';
@@ -15,13 +16,16 @@ const INITIAL_STATE = {
 function canvasReducer(state = INITIAL_STATE, action = {}) {
 
   // log('canvasReducer')
-  // log('state', state)
+  log('state', state)
   // log('action', action)
   log('return', merge(state, action.payload))
 
   switch (action.type) {
 
   case WINDOW_RESIZE:
+    return merge(state, action.payload);
+  
+  case SUBMIT_TEST:
     return merge(state, action.payload);
 
   default:
