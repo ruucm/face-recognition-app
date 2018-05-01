@@ -1,1 +1,6 @@
-body { margin: 0; }
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,700,700i|Titan+One');
+
+body {
+  margin: 0;
+  font-family: Josefin Sans;
+}
