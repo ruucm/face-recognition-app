@@ -3,6 +3,12 @@ import { connect } from 'react-redux';
 import Canvas from '../components/canvas';
 import { windowResize } from '../actions/canvas';
 import Header from '../components/Header';
+import styled from 'styled-components';
+
+const IPhone8Wrapper = styled.section`
+  max-width: 375px;
+  margin: 0 auto;
+`;
 
 const clrs = ['#FFE200', '#34A766', '#0072BB', '#DB3B43', '#FE7541'];
 
@@ -33,7 +39,7 @@ class App extends Component {
   render() {
     const { w, h } = this.props;
     return (
-      <div>
+      <IPhone8Wrapper>
         <Header />
         <Canvas { ...this.props }>
           {
@@ -49,7 +55,7 @@ class App extends Component {
           }
         </Canvas>
         {/* <Content /> */}
-      </div>
+      </IPhone8Wrapper>
     );
   }
 
