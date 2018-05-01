@@ -3878,7 +3878,7 @@ lodash.words@^3.0.0:
   dependencies:
     lodash._root "^3.0.0"
 
-lodash@^4.0.0, lodash@^4.1.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0:
+lodash@^4.0.0, lodash@^4.1.0, lodash@^4.17.10, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0:
   version "4.17.10"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
 
@@ -5670,6 +5670,10 @@ run-async@^0.1.0:
   resolved "https://registry.yarnpkg.com/run-async/-/run-async-0.1.0.tgz#c8ad4a5e110661e402a7d21b530e009f25f8e389"
   dependencies:
     once "^1.3.0"
+
+ruucm-util@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/ruucm-util/-/ruucm-util-0.10.0.tgz#62407451e3d06332c07fd67fec0d5bbc503528e1"
 
 rx-lite@^3.1.2:
   version "3.1.2"

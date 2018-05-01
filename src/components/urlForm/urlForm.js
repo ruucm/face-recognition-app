@@ -3,11 +3,12 @@ import React, { Component } from 'react';
 
 class UrlForm extends Component {
   render() {
+    const { submitTest } = this.props;
     return (
       <div>
         UrlForm
 
-        <button>Test button</button>
+        <button onClick={ submitTest }>Test button</button>
       </div>
     );
   }

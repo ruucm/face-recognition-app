@@ -1,31 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Canvas from '../components/canvas';
-import { windowResize } from '../actions/canvas';
+import { log } from 'ruucm-util';
+import * as Actions from '../actions';
+import { bindActionCreators } from 'redux';
+
+
 import Header from '../components/Header';
 import UrlForm from '../components/UrlForm';
-
 import styled from 'styled-components';
+
+const clrs = ['#FFE200', '#34A766', '#0072BB', '#DB3B43', '#FE7541'];
 
 const IPhone8Wrapper = styled.section`
   max-width: 375px;
   margin: 0 auto;
 `;
 
-const clrs = ['#FFE200', '#34A766', '#0072BB', '#DB3B43', '#FE7541'];
-
-function mapStateToProps(state) {
-  return {
-    w: state.canvas.get('w'),
-    h: state.canvas.get('h'),
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    windowResize: (dimensions) => dispatch(windowResize(dimensions)),
-  };
-}
 
 class App extends Component {
 
@@ -39,6 +30,9 @@ class App extends Component {
   }
 
   render() {
+    log('redner!')
+    log('this.state', this.state)
+    log('this.props', this.props)
     const { w, h } = this.props;
     return (
       <IPhone8Wrapper>
@@ -57,7 +51,7 @@ class App extends Component {
           }
         </Canvas>
         <UrlForm />
-      </IPhone8Wrapper>
+      </ IPhone8Wrapper>
     );
   }
 
@@ -76,7 +70,21 @@ App.propTypes = {
   windowResize: React.PropTypes.func,
 };
 
+
+function mapStateToProps(state) {
+  return {
+    w: state.canvas.w,
+    h: state.canvas.h,
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(Actions, dispatch);
+}
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
 )(App);
+
+// export default connect((state) => state, mapDispatchToProps)(App);
