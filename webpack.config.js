@@ -53,6 +53,7 @@ module.exports = {
       'redux',
       'redux-thunk',
       'redux-logger',
+      'babel-polyfill'
     ],
   },
 
