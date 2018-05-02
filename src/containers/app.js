@@ -10,8 +10,15 @@ import Header from '../components/Header';
 import UrlForm from '../components/UrlForm';
 import UrlFormBack from '../components/UrlFormBack';
 import IPhone8Wrapper from '../components/Frames/IPhone8Wrapper';
+// import GiphySearch from '../components/GiphySearch';
+
+import styled from 'styled-components';
 
 const clrs = ['#FFE200', '#34A766', '#0072BB', '#DB3B43', '#FE7541'];
+
+const FormWrapper = styled.section`
+  position: relative;
+`;
 
 class App extends Component {
 
@@ -32,15 +39,21 @@ class App extends Component {
     return (
       <IPhone8Wrapper>
         <Header />
-        <Canvas { ...this.props }>
-          {/* {
-            clrs.map((clr, idx) =>
-              <Bar key={idx} idx={idx} yellowSize={yellowSize} clr={clr} {...this.props} />
-            )
-          } */}
-          <UrlFormBack {...this.props} />
-        </Canvas>
-        <UrlForm {...this.props} />
+        <FormWrapper>
+          <Canvas { ...this.props }>
+            {/* {
+              clrs.map((clr, idx) =>
+                <Bar key={idx} idx={idx} yellowSize={yellowSize} clr={clr} {...this.props} />
+              )
+            } */}
+            <UrlFormBack {...this.props} />
+          </Canvas>
+          <UrlForm {...this.props} />
+        </FormWrapper>
+        {/* <div>
+          <h1>Giphy Search</h1>
+          <GiphySearch initialQuery="dog" RenderLoading={SpinLoad} />
+        </div> */}
       </ IPhone8Wrapper>
     );
   }
