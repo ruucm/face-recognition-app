@@ -41,10 +41,9 @@ class App extends Component {
         <Header />
         <Canvas { ...this.props }>
           {
-            clrs.map((clr, idx) => {
-              log('yellowSize - render', yellowSize)
-              return <Bar key={idx} idx={idx} yellowSize={yellowSize} clr={clr} {...this.props} />
-            })
+            clrs.map((clr, idx) =>
+              <Bar key={idx} idx={idx} yellowSize={yellowSize} clr={clr} {...this.props} />
+            )
           }
         </Canvas>
         <UrlForm {...this.props} />
