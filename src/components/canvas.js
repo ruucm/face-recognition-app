@@ -26,7 +26,7 @@ const Canvas = ({ w, h, children }) => {
       height="100%"
       viewBox={ viewBox }
       style={ styles }>
-      { children }>
+      { children }
     </ ShadowedSvg>
   );
 };
