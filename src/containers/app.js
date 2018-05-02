@@ -11,16 +11,6 @@ import UrlForm from '../components/UrlForm';
 import UrlFormBack from '../components/UrlFormBack';
 import IPhone8Wrapper from '../components/Frames/IPhone8Wrapper';
 
-import styled from 'styled-components';
-
-
-const TestRect = styled.div`
-  background: red;
-  width: 100%;
-  height: 100%;
-  border-radius: 21px;
-`;
-
 const clrs = ['#FFE200', '#34A766', '#0072BB', '#DB3B43', '#FE7541'];
 
 class App extends Component {
@@ -50,7 +40,6 @@ class App extends Component {
           } */}
           <UrlFormBack {...this.props} />
         </Canvas>
-        <TestRect />
         <UrlForm {...this.props} />
       </ IPhone8Wrapper>
     );
