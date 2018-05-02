@@ -17,16 +17,32 @@ class Bar extends Component {
 
     log('yellowSize - Bar', yellowSize)
 
-    if (yellowSize < 30) {
+    if (yellowSize == 100) {
       this.jelly();
-    } else {
-      // this.swooshReverse();
+    } else if (yellowSize == 80) {
+      this.swooshReverse();
     }
   }
 
   jelly = () => {
     log('this._rect', this._rect)
-    TweenLite.fromTo(this._rect, 20, 
+    TweenLite.fromTo(this._rect, 2, 
+      {
+        backgroundColor: 'rgb(255, 39, 46)',
+        scale: 1,
+         left: -400
+      },
+      {
+        scale: 5,
+         left: 400,
+         rotation: 360,
+        //  repeat: 1, /* Aka infinite amount of repeats */
+        //  yoyo: true /* Make it go back and forth */
+      }
+    );
+  }
+  swooshReverse = () => {
+    TweenLite.fromTo(this._rect, 2, 
       {
         backgroundColor: 'rgb(255, 39, 46)',
         scale: 5,
@@ -36,8 +52,8 @@ class Bar extends Component {
         scale: 1,
          left: 400,
          rotation: 360,
-         repeat: -1, /* Aka infinite amount of repeats */
-         yoyo: true /* Make it go back and forth */
+        //  repeat: 1, /* Aka infinite amount of repeats */
+        //  yoyo: true /* Make it go back and forth */
       }
     );
   }
