@@ -8,6 +8,7 @@ import { bindActionCreators } from 'redux';
 import Bar from '../components/bar';
 import Header from '../components/Header';
 import UrlForm from '../components/UrlForm';
+import UrlFormBack from '../components/UrlFormBack';
 import IPhone8Wrapper from '../components/Frames/IPhone8Wrapper';
 
 
@@ -33,11 +34,12 @@ class App extends Component {
       <IPhone8Wrapper>
         <Header />
         <Canvas { ...this.props }>
-          {
+          {/* {
             clrs.map((clr, idx) =>
               <Bar key={idx} idx={idx} yellowSize={yellowSize} clr={clr} {...this.props} />
             )
-          }
+          } */}
+          <UrlFormBack {...this.props} />
         </Canvas>
         <UrlForm {...this.props} />
       </ IPhone8Wrapper>
