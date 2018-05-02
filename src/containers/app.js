@@ -46,7 +46,7 @@ class App extends Component {
           </Canvas>
           <UrlForm {...this.props} />
         </FormWrapper>
-        <GiphySearch initialQuery="dog" RenderLoading={SpinLoad} />
+        {/* <GiphySearch initialQuery="dog" RenderLoading={SpinLoad} /> */}
       </ IPhone8Wrapper>
     );
   }
