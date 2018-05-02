@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 import TweenLite from 'gsap';
 import { log } from 'ruucm-util';
+import styled from 'styled-components';
 
+
+const ShadowedSvg = styled.svg`
+  -webkit-filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.5));
+  filter: drop-shadow(12px -12px 7px rgba(0,0,0,0.5));
+`;
 
 /**
  * SVG Canvas
@@ -14,14 +20,14 @@ const Canvas = ({ w, h, children }) => {
   log('{ w, h, children }', { w, h, children })
 
   return (
-    <svg version="1.1"
+    <ShadowedSvg version="1.1"
       xmlns="http://www.w3.org/2000/svg"
       width="100%"
       height="100%"
       viewBox={ viewBox }
       style={ styles }>
-      { children }
-    </svg>
+      { children }>
+    </ ShadowedSvg>
   );
 };
 
