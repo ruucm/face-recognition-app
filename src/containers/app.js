@@ -5,20 +5,13 @@ import { log } from 'ruucm-util';
 import * as Actions from '../actions';
 import { bindActionCreators } from 'redux';
 
-
+import Bar from '../components/bar';
 import Header from '../components/Header';
 import UrlForm from '../components/UrlForm';
-import styled from 'styled-components';
+import IPhone8Wrapper from '../components/Frames/IPhone8Wrapper';
 
-import Bar from '../components/bar';
 
 const clrs = ['#FFE200', '#34A766', '#0072BB', '#DB3B43', '#FE7541'];
-
-const IPhone8Wrapper = styled.section`
-  max-width: 375px;
-  margin: 0 auto;
-`;
-
 
 class App extends Component {
 
