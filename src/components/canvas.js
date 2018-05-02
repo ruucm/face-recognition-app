@@ -5,8 +5,8 @@ import styled from 'styled-components';
 
 
 const ShadowedSvg = styled.svg`
-  -webkit-filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.5));
-  filter: drop-shadow(12px -12px 7px rgba(0,0,0,0.5));
+  -webkit-filter: drop-shadow(0px -4px 40px rgba(40, 62, 77, 0.25));
+  filter: drop-shadow(0px -4px 40px rgba(40, 62, 77, 0.25));
 `;
 
 /**

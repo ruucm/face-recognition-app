@@ -10,9 +10,9 @@ class UrlForm extends Component {
     return (
       <Card>
         <Card.Title>enter url here</Card.Title>
-        <Card.Input />
+        <Card.Input placeholder="http://img.of.awesome..." />
         <Card.InputHr />
-        <button onClick={ () => submitTest(120) }>Test button</button>
+        <Card.Button onClick={ () => submitTest(120) }></Card.Button>
       </Card>
     );
   }
