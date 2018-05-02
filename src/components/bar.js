@@ -25,15 +25,21 @@ class Bar extends Component {
   }
 
   jelly = () => {
-    log('this._circle', this._circle)
     log('this._rect', this._rect)
-    log('this._canvas', this._canvas)
-    TweenLite.fromTo(this._canvas, 1.5, {
-      attr:{ width: 0 }
-    }, {
-      attr:{ width: this.props.width },
-      ease: Elastic.easeOut.config(1, 0.3)
-    });
+    TweenLite.fromTo(this._rect, 20, 
+      {
+        backgroundColor: 'rgb(255, 39, 46)',
+        scale: 5,
+         left: -400
+      },
+      {
+        scale: 1,
+         left: 400,
+         rotation: 360,
+         repeat: -1, /* Aka infinite amount of repeats */
+         yoyo: true /* Make it go back and forth */
+      }
+    );
   }
 
   render() {
@@ -46,6 +52,7 @@ class Bar extends Component {
         x={ 0.1625 * w + (0.15 * w * idx) } y={ 0.25 * h }
         width={ 0.075 * w }
         height={ yellowSize }
+        ref={ (c) => this._rect = c }
         fill='#F0625C' />
       )
     else
@@ -54,6 +61,7 @@ class Bar extends Component {
           x={ 0.1625 * w + (0.15 * w * idx) } y={ 0.25 * h }
           width={ 0.075 * w }
           height={ 0.5 * h }
+          ref={ (c) => this._rect = c }
           fill={ clr } />
       )}
 }
