@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-// import Header from './Header';
 import Image from './Image';
 import Text from './Text';
 import Title from './Title';
 import Input from './Input';
+import InputHr from './InputHr';
 
 const Card = styled.div`
   position: absolute;
@@ -13,10 +13,10 @@ const Card = styled.div`
   height: 100%;
 `;
 
-// Card.Header = Header;
 Card.Image = Image;
 Card.Text = Text;
 Card.Title = Title;
 Card.Input = Input;
+Card.InputHr = InputHr;
 
 export default Card;
