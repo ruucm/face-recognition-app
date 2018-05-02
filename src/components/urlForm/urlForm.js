@@ -17,9 +17,11 @@ const renderField = ({
         (warning && <Card.InputError>{warning}</Card.InputError>))}
   </div>
 )
+const required = value => (value ? undefined : '이 필드는 필수 입니다')
+
 class UrlForm extends Component {
   render() {
-    const { submitTest, required } = this.props;
+    const { handleSubmit, submitTest } = this.props;
     log('this.props(submitTest)', this.props)
     return (
       <Card>
