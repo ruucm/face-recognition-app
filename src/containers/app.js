@@ -10,6 +10,8 @@ import Header from '../components/Header';
 import UrlForm from '../components/UrlForm';
 import styled from 'styled-components';
 
+import Bar from '../components/bar';
+
 const clrs = ['#FFE200', '#34A766', '#0072BB', '#DB3B43', '#FE7541'];
 
 const IPhone8Wrapper = styled.section`
@@ -41,22 +43,7 @@ class App extends Component {
           {
             clrs.map((clr, idx) => {
               log('yellowSize - render', yellowSize)
-              if (idx == 0 && yellowSize > 0)
-                return (
-                  <rect key={ idx }
-                  x={ 0.1625 * w + (0.15 * w * idx) } y={ 0.25 * h }
-                  width={ 0.075 * w }
-                  height={ yellowSize }
-                  fill='#F0625C' />
-                )
-              else
-                return (
-                  <rect key={ idx }
-                    x={ 0.1625 * w + (0.15 * w * idx) } y={ 0.25 * h }
-                    width={ 0.075 * w }
-                    height={ 0.5 * h }
-                    fill={ clr } />
-              );
+              return <Bar key={idx} idx={idx} yellowSize={yellowSize} clr={clr} {...this.props} />
             })
           }
         </Canvas>

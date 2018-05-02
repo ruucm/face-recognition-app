@@ -70,6 +70,7 @@
   },
   "dependencies": {
     "express": "^4.13.3",
+    "gsap": "^1.20.4",
     "helmet": "^1.1.0",
     "http-proxy": "^1.12.1",
     "lodash": "^4.17.10",

@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
+import TweenLite from 'gsap';
+import { log } from 'ruucm-util';
+
 
 /**
  * SVG Canvas
@@ -7,6 +10,8 @@ import React from 'react';
  */
 const Canvas = ({ w, h, children }) => {
   const viewBox = [0, 0, w, h].join(' ');
+
+  log('{ w, h, children }', { w, h, children })
 
   return (
     <svg version="1.1"
