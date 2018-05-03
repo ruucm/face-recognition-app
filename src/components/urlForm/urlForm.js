@@ -21,12 +21,12 @@ const required = value => (value ? undefined : 'url needed 🤨')
 
 class UrlForm extends Component {
   render() {
-    const { handleSubmit, submitTest } = this.props;
+    const { handleSubmit, submitTest, submitUrl, isSubmitted } = this.props;
     log('this.props(submitTest)', this.props)
     return (
       <Card>
         <Card.Title>enter url here</Card.Title>
-        <Card.Form onSubmit={handleSubmit(values => submit(values))}>
+        <Card.Form onSubmit={handleSubmit(values => submit(values, submitUrl))}>
           <Field
             name="url"
             type="text"
@@ -35,7 +35,7 @@ class UrlForm extends Component {
             validate={[required]}
           />
           <Card.InputHr />
-          <Card.Button onClick={ () => submitTest(120) }></Card.Button>
+          <Card.Button />
         </Card.Form>
       </Card>
     );

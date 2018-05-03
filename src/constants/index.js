@@ -6,6 +6,7 @@
  */
 export const WINDOW_RESIZE = '@@app/WINDOW_RESIZE';
 export const SUBMIT_TEST = 'SUBMIT_TEST';
+export const SUBMIT_URL = 'SUBMIT_URL';
 
 
 

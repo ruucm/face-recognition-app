@@ -19,6 +19,7 @@ const clrs = ['#FFE200', '#34A766', '#0072BB', '#DB3B43', '#FE7541'];
 
 const FormWrapper = styled.section`
   position: relative;
+  margin-top: ${props => (props.isSubmitted == true) ? '-160px' : '0'};
 `;
 
 class App extends Component {
@@ -36,11 +37,11 @@ class App extends Component {
     log('render!')
     log('this.state', this.state)
     log('this.props', this.props)
-    const { w, h, yellowSize } = this.props;
+    const { w, h, yellowSize, isSubmitted } = this.props;
     return (
       <IPhone8Wrapper>
         <Header />
-        <FormWrapper>
+        <FormWrapper isSubmitted={isSubmitted}>
           <Canvas { ...this.props }>
             <UrlFormBack {...this.props} />
           </Canvas>
@@ -68,10 +69,12 @@ class App extends Component {
 
 
 function mapStateToProps(state) {
+  log('state(mapStateToProps)', state)
   return {
     w: state.canvas.get('w'),
     h: state.canvas.get('h'),
     yellowSize: state.canvas.get('yellowSize'),
+    isSubmitted: state.submitUrl.get('isSubmitted'),
   };
 }
 

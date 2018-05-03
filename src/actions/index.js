@@ -1,4 +1,4 @@
-import { WINDOW_RESIZE, SUBMIT_TEST } from '../constants';
+import { WINDOW_RESIZE, SUBMIT_TEST, SUBMIT_URL } from '../constants';
 import { log } from 'ruucm-util';
 
 export function windowResize({ width, height }) {
@@ -14,5 +14,12 @@ export function submitTest(yellowSize) {
   return {
     type: SUBMIT_TEST,
     payload: { yellowSize },
+  };
+}
+
+export function submitUrl(isSubmitted) {
+  return {
+    type: SUBMIT_URL,
+    payload: { isSubmitted },
   };
 }
