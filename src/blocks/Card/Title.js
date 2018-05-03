@@ -9,6 +9,7 @@ const Title = styled.h1`
   color: #283E4E;
   text-align: center;
   margin: 0;
+  margin-top: ${props => props.marginTop};
 `;
 
 export default Title;

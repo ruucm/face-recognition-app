@@ -11,7 +11,7 @@ import Button from './Button';
 
 const Card = styled.div`
   position: absolute;
-  top: 158px;
+  top: ${props => props.top};
   width: 100%;
 `;
 

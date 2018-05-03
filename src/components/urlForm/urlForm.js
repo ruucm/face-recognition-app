@@ -25,24 +25,15 @@ class UrlForm extends Component {
     log('this.props(submitTest)', this.props)
     return (
         (isSubmitted) ? (
-          <Card>
-            <Card.Title>the result is ..</Card.Title>
-            {submittedUrl}
-            <Card.Form onSubmit={handleSubmit(values => submit(values, submitUrl))}>
-              <Field
-                name="url"
-                type="text"
-                component={renderField}
-                placeholder="http://img.of.awesome..."
-                validate={[required]}
-              />
-              <Card.InputHr />
-              <Card.Button />
-            </Card.Form>
+          <Card top='48px'>
+            <Card.Image src={submittedUrl} width='263px' height='269px' />
+            <Card.Title marginTop='41px'>the result is ..</Card.Title>
+            datas~
           </Card>
         ) : (
-          <Card>
+          <Card top='158px'>
             <Card.Title>enter url here</Card.Title>
+            {/* <Card.Image src='http://img.etoday.co.kr/pto_db/2016/03/20160330033435_845107_473_593.JPG' width='263px' height='269px' /> */}
             {/* {this.state.form.url-form.values} */}
             {log('this.props.form', this.props.form)}
             <Card.Form onSubmit={handleSubmit(values => submit(values, submitUrl))}>
