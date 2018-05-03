@@ -29,13 +29,11 @@ class UrlForm extends Component {
             <Card.Image src={submittedUrl} width='263px' height='269px' />
             <Card.Title marginTop='41px'>the result is ..</Card.Title>
             datas~
+            <Card.Button />
           </Card>
         ) : (
           <Card top='158px'>
             <Card.Title>enter url here</Card.Title>
-            {/* <Card.Image src='http://img.etoday.co.kr/pto_db/2016/03/20160330033435_845107_473_593.JPG' width='263px' height='269px' /> */}
-            {/* {this.state.form.url-form.values} */}
-            {log('this.props.form', this.props.form)}
             <Card.Form onSubmit={handleSubmit(values => submit(values, submitUrl))}>
               <Field
                 name="url"
