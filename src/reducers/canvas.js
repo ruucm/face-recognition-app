@@ -4,39 +4,6 @@ import {
 } from '../constants';
 import { fromJS } from 'immutable';
 import { log } from 'ruucm-util';
-// import { merge } from 'lodash';
-
-// const INITIAL_STATE = {
-//   width: 100,
-//   height: 100,
-//   w: 100,
-//   h: 100,
-//   yellowSize: 100,
-// };
-
-// function canvasReducer(state = INITIAL_STATE, action = {}) {
-
-//   // log('canvasReducer')
-//   log('state', state)
-//   log('action', action)
-//   // log('return', merge(state, {yellowSize: state.yellowSize * 0.8}))
-
-//   log('state.yellowSize * 0.1', state.yellowSize * 0.1)
-
-//   switch (action.type) {
-
-//   case WINDOW_RESIZE:
-//     return merge(state, action.payload);
-  
-//   case SUBMIT_TEST:
-//     return merge(state, {yellowSize: state.yellowSize * 0.1});
-
-//   default:
-//     return state;
-//   }
-// }
-
-
 
 const INITIAL_STATE = fromJS({
   width: 100,
