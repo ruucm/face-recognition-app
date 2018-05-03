@@ -6,12 +6,11 @@ function submit(values, rt) {
     then((Resoponse)=>Resoponse.json()).
     then((findresponse)=> {
       log('findresponse', findresponse)
-      if (findresponse.data.resultMsg == 'SUCCESS') {
+      if (findresponse.Labels.FaceDetails) {
       }
       else {
         throw new SubmissionError({
-          username: '가입된 회원이 아닙니다. 이메일을 확인 해 주세요.',
-          _error: '가입된 회원이 아닙니다. 이메일 비밀번호를 확인 해 주세요.'
+          _error: findresponse.message
         })
       }
   })
