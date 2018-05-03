@@ -21,23 +21,44 @@ const required = value => (value ? undefined : 'url needed 🤨')
 
 class UrlForm extends Component {
   render() {
-    const { handleSubmit, submitTest, submitUrl, isSubmitted } = this.props;
+    const { handleSubmit, submitTest, submitUrl, isSubmitted, submittedUrl } = this.props;
     log('this.props(submitTest)', this.props)
     return (
-      <Card>
-        <Card.Title>enter url here</Card.Title>
-        <Card.Form onSubmit={handleSubmit(values => submit(values, submitUrl))}>
-          <Field
-            name="url"
-            type="text"
-            component={renderField}
-            placeholder="http://img.of.awesome..."
-            validate={[required]}
-          />
-          <Card.InputHr />
-          <Card.Button />
-        </Card.Form>
-      </Card>
+        (isSubmitted) ? (
+          <Card>
+            <Card.Title>the result is ..</Card.Title>
+            {submittedUrl}
+            <Card.Form onSubmit={handleSubmit(values => submit(values, submitUrl))}>
+              <Field
+                name="url"
+                type="text"
+                component={renderField}
+                placeholder="http://img.of.awesome..."
+                validate={[required]}
+              />
+              <Card.InputHr />
+              <Card.Button />
+            </Card.Form>
+          </Card>
+        ) : (
+          <Card>
+            <Card.Title>enter url here</Card.Title>
+            {/* {this.state.form.url-form.values} */}
+            {log('this.props.form', this.props.form)}
+            <Card.Form onSubmit={handleSubmit(values => submit(values, submitUrl))}>
+              <Field
+                name="url"
+                type="text"
+                component={renderField}
+                placeholder="http://img.of.awesome..."
+                validate={[required]}
+              />
+              <Card.InputHr />
+              <Card.Button />
+            </Card.Form>
+          </Card>
+        )
+      
     );
   }
 }

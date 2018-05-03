@@ -13,7 +13,9 @@ function submitUrlReducer(state = INITIAL_STATE, action = {}) {
     case SUBMIT_URL:
       let payload = !state.get('isSubmitted');
       return state.merge({isSubmitted: payload});
-
+    case '@@redux-form/CHANGE':
+      log('form value change!!', action.payload)
+      return state.merge({submittedUrl: action.payload});
     default:
       return state;
   }
