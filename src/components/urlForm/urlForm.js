@@ -28,7 +28,7 @@ class UrlForm extends Component {
         <Card.Title>enter url here</Card.Title>
         <Card.Form onSubmit={handleSubmit(values => submit(values))}>
           <Field
-            name="phone"
+            name="url"
             type="text"
             component={renderField}
             placeholder="http://img.of.awesome..."
