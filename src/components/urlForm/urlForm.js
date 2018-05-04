@@ -30,14 +30,20 @@ class UrlForm extends Component {
   render() {
     const { handleSubmit, submitTest, submitUrl, 
       isSubmitted, submittedUrl, setResultData, resultData,
-      w
+      w, h
     } = this.props;
     log('FaceBox', FaceBox)
     var faceResults = resultData.toJS();
+    var info = faceResults.BoundingBox;
     return (
         (isSubmitted) ? (
           <Card top='48px'>
-            {(faceResults == [] || isEmpty(faceResults.Landmarks)) ? ('') : (<FaceBox w={263} h={269} info={faceResults.BoundingBox} />)}
+            {(faceResults == [] || isEmpty(faceResults.Landmarks)) ? ('') : (
+              <div>
+                <FaceBox w={263} h={269} info={info} />
+                <Card.Here left={w * (info.Left + info.Width/2)} top={h * (info.Top + info.Height/2)}>here !</Card.Here>
+              </div>
+            )}
             
             <Card.Image src={submittedUrl} width='263px' height='269px' />
             <Card.Title marginTop='41px'>the result is ..</Card.Title>

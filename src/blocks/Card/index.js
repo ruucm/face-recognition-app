@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Image from './Image';
 import Text from './Text';
 import Title from './Title';
+import Here from './Here';
 import Form from './Form';
 import Input from './Input';
 import InputHr from './InputHr';
@@ -16,6 +17,7 @@ const Card = styled.div`
 `;
 
 Card.Title = Title;
+Card.Here = Here;
 Card.Form = Form;
 Card.Input = Input;
 Card.InputHr = InputHr;
