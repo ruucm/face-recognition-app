@@ -6,6 +6,7 @@ import submit from './submit';
 import { isEmpty } from 'lodash';
 import { List } from 'immutable';
 import FaceBox from './FaceBox';
+import styled from 'styled-components';
 
 const renderField = ({
   input,
@@ -26,10 +27,14 @@ const trimNum = (source, num) => {
   return source.toString().slice(0, num)
 }
 
+const PaddingWrapper = styled.div`
+  padding: ${props => props.padding};
+`
+
 class UrlForm extends Component {
   render() {
     const { 
-      handleSubmit, submitting,
+      handleSubmit, submitting, reset, // redux-form 
       submitTest, submitUrl, 
       isSubmitted, submittedUrl, setResultData, resultData,
       w, h
@@ -59,16 +64,19 @@ class UrlForm extends Component {
               {(faceResults == [] || isEmpty(faceResults.Landmarks)) ? (
                 <Card.Text>Loading</Card.Text>
               ) : (
-                <div>
+                <PaddingWrapper padding='0 50px'>
                   <Card.Text>BoundingBox ({trimNum(faceResults.BoundingBox.Left, 4)}, {trimNum(faceResults.BoundingBox.Top, 4)}, {trimNum(faceResults.BoundingBox.Width, 4)}, {trimNum(faceResults.BoundingBox.Height, 4)})</Card.Text>
                   <Card.Text>eyeLeft ({trimNum(faceResults.Landmarks[0].X, 4)}, {trimNum(faceResults.Landmarks[0].Y, 4)})</Card.Text>
                   <Card.Text>eyeRight ({trimNum(faceResults.Landmarks[1].X, 4)}, {trimNum(faceResults.Landmarks[1].Y, 4)})</Card.Text>
                   <Card.Text>nose ({trimNum(faceResults.Landmarks[2].X, 4)}, {trimNum(faceResults.Landmarks[2].Y, 4)})</Card.Text>
                   <Card.Text>mouthLeft ({trimNum(faceResults.Landmarks[3].X, 4)}, {trimNum(faceResults.Landmarks[3].Y, 4)})</Card.Text>
                   <Card.Text>mouthRight ({trimNum(faceResults.Landmarks[4].X, 4)}, {trimNum(faceResults.Landmarks[4].Y, 4)})</Card.Text>
-                </div>
+                </PaddingWrapper>
               )}
-              <Card.Button onClick={submitUrl} />
+              <Card.Button onClick={() => {
+                submitUrl();
+                reset('url-form');
+              }} />
             </Card>
           ) : (
             <Card top='158px'>
