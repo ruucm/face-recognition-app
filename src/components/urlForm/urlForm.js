@@ -6,7 +6,7 @@ import submit from './submit';
 import { isEmpty } from 'lodash';
 import { List } from 'immutable';
 import FaceBox from './FaceBox';
-import styled from 'styled-components';
+import PaddingWrapper from '../Frames/PaddingWrapper';
 
 const renderField = ({
   input,
@@ -27,10 +27,6 @@ const trimNum = (source, num) => {
   return source.toString().slice(0, num)
 }
 
-const PaddingWrapper = styled.div`
-  padding: ${props => props.padding};
-`
-
 class UrlForm extends Component {
   render() {
     const { 
@@ -39,7 +35,7 @@ class UrlForm extends Component {
       isSubmitted, submittedUrl, setResultData, resultData,
       w, h
     } = this.props;
-    log('FaceBox', FaceBox)
+    log('PaddingWrapper', PaddingWrapper)
     var faceResults = resultData.toJS();
     var info = faceResults.BoundingBox;
     if (submitting)
