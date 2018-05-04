@@ -13,4 +13,12 @@ export const center = (type) => {
       right: auto;
       transform: translateX(-50%);
     `
+  else if (type == 'xy')
+    return css`
+      left: 50%;
+      top: 50%;
+      bottom: auto;
+      right: auto;
+      transform: translateX(-50%) translateY(-50%);
+    `
 }

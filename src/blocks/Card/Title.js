@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { center } from '../../styles/mixins';
 
 const Title = styled.h1`
   font-family: Josefin Sans;
@@ -10,6 +11,13 @@ const Title = styled.h1`
   text-align: center;
   margin: 0;
   margin-top: ${props => props.marginTop};
+  ${props => props.loading && css`
+    font-size: 36px;
+    ${center('xy')}
+    position: absolute;
+    letter-spacing: 4px;
+    height: 0;
+  `}
 `;
 
 export default Title;
