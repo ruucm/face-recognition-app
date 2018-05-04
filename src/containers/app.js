@@ -71,9 +71,9 @@ function mapStateToProps(state) {
     w: state.canvas.get('w'),
     h: state.canvas.get('h'),
     yellowSize: state.canvas.get('yellowSize'),
-    isSubmitted: state.submitUrl.isSubmitted,
-    submittedUrl: state.submitUrl.submittedUrl,
-    resultData: state.submitUrl.resultData,
+    isSubmitted: state.submitUrl.get('isSubmitted'),
+    submittedUrl: state.submitUrl.get('submittedUrl'),
+    resultData: state.submitUrl.get('resultData'),
   };
 }
 
