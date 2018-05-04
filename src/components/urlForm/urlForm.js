@@ -21,6 +21,10 @@ const renderField = ({
 )
 const required = value => (value ? undefined : 'url needed 🤨')
 
+const trimNum = (source, num) => {
+  return source.toString().slice(0, num)
+}
+
 class UrlForm extends Component {
   render() {
     const { handleSubmit, submitTest, submitUrl, 
@@ -38,14 +42,14 @@ class UrlForm extends Component {
               <Card.Text>Loading</Card.Text>
             ) : (
               <div>
-                <Card.Text>eyeLeft ({faceResults.Landmarks[0].X}, {faceResults.Landmarks[0].Y})</Card.Text>
-                <Card.Text>eyeRight ({faceResults.Landmarks[1].X}, {faceResults.Landmarks[1].Y})</Card.Text>
-                <Card.Text>nose ({faceResults.Landmarks[2].X}, {faceResults.Landmarks[2].Y})</Card.Text>
-                <Card.Text>mouthLeft ({faceResults.Landmarks[3].X}, {faceResults.Landmarks[3].Y})</Card.Text>
-                <Card.Text>mouthRight ({faceResults.Landmarks[4].X}, {faceResults.Landmarks[4].Y})</Card.Text>
+                <Card.Text>eyeLeft ({trimNum(faceResults.Landmarks[0].X, 4)}, {trimNum(faceResults.Landmarks[0].Y, 4)})</Card.Text>
+                <Card.Text>eyeRight ({trimNum(faceResults.Landmarks[1].X, 4)}, {trimNum(faceResults.Landmarks[1].Y, 4)})</Card.Text>
+                <Card.Text>nose ({trimNum(faceResults.Landmarks[2].X, 4)}, {trimNum(faceResults.Landmarks[2].Y, 4)})</Card.Text>
+                <Card.Text>mouthLeft ({trimNum(faceResults.Landmarks[3].X, 4)}, {trimNum(faceResults.Landmarks[3].Y, 4)})</Card.Text>
+                <Card.Text>mouthRight ({trimNum(faceResults.Landmarks[4].X, 4)}, {trimNum(faceResults.Landmarks[4].Y, 4)})</Card.Text>
               </div>
             )}
-            <Card.Button />
+            <Card.Button onClick={submitUrl} />
           </Card>
         ) : (
           <Card top='158px'>
