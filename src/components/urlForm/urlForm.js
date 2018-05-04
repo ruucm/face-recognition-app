@@ -32,26 +32,15 @@ class UrlForm extends Component {
           <Card top='48px'>
             <Card.Image src={submittedUrl} width='263px' height='269px' />
             <Card.Title marginTop='41px'>the result is ..</Card.Title>
-            datas~
-            
-            {/* {submittedUrl} */}
-            {resultData}
-
-            {(resultData == [] || isEmpty(resultData.Landmarks)) ? (log('hey(loading)', resultData)) : (log('hey', resultData))}
-            
             {(resultData == [] || isEmpty(resultData.Landmarks)) ? (
               <Card.Text>Loading</Card.Text>
             ) : (
               <Card.Text>eyeLeft ({resultData.Landmarks[0].X}, {resultData.Landmarks[0].Y})</Card.Text>
             )}
-             
-            <Card.Text></Card.Text>
             <Card.Button />
           </Card>
         ) : (
           <Card top='158px'>
-            {w}
-            {log('w', w)}
             <Card.Title>enter url here</Card.Title>
             <Card.Form onSubmit={handleSubmit(values => submit(values, submitUrl, setResultData))}>
               <Field

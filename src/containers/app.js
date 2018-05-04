@@ -34,9 +34,6 @@ class App extends Component {
   }
 
   render() {
-    log('render!')
-    log('this.state', this.state)
-    log('this.props', this.props)
     const { w, h, yellowSize, isSubmitted } = this.props;
     return (
       <IPhone8Wrapper>
