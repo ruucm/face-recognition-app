@@ -21,7 +21,10 @@ function canvasReducer(state = INITIAL_STATE, action = {}) {
   switch (action.type) {
 
     case WINDOW_RESIZE:
-      return state.merge(action.payload);
+      log('WINDOW_RESIZE!')
+      let re = state.merge(action.payload);
+      log('re!', re)
+      return re;
     
     case SUBMIT_TEST:
       var payload = (state.get('yellowSize') * 0.8 < 20) ? (100) : (state.get('yellowSize') * 0.8)
