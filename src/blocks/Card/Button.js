@@ -9,6 +9,7 @@ const Button = styled.button`
   right: 24px;
   bottom: 24px;
   box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.25);
+  border: none;
 `;
 
 export default Button;
